@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Sewa Sewo - Tata Cara Penyewaan</title>
+  <title>Sewa Sewo - Konfirmasi Pembayaran</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
     integrity="sha512-xrZr44l54tfjkER8mKu+IqU77z4sGWu+TByfHTtqjL2z7WBRl9/p3a1NVrqdkX0fFU4PXVcO8A00vf5B6aSppQ=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -12,35 +12,6 @@
     integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
   <style>
     /* ... (styles remain unchanged) ... */
-    .step-container {
-      display: flex;
-      justify-content: space-between;
-      margin-top: 30px;
-      margin-bottom: 30px;
-    }
-
-    .step-box {
-      border: 2px solid #00C5C8;
-      border-radius: 8px;
-      padding: 20px;
-      margin-bottom: 20px;
-      background-color: #fff;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    }
-
-    .step-content {
-      width: 48%;
-    }
-
-    .step-img {
-      width: 48%;
-    }
-
-    .step-img img {
-      width: 100%;
-      border-radius: 8px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    }
   </style>
 </head>
 
@@ -92,73 +63,38 @@
   </nav>
 
   <div class="container content-box" style="margin-top: 120px;">
-    <h2>Tata Cara Penyewaan Lapangan</h2>
+    <h2>Konfirmasi Pembayaran</h2>
 
-    <!-- Langkah 1 -->
-    <div class="step-container">
-      <div class="step-box">
-        <div class="step-content">
-          <h3>Langkah 1: Pilih Lapangan</h3>
-          <p>Pilih lapangan yang ingin Anda sewa dari berbagai pilihan lapangan yang tersedia.</p>
-        </div>
-      </div>
-      <div class="step-img">
-        <img src="{{ asset('lapangan.jpg') }}" alt="Contoh Lapangan">
-      </div>
+    <!-- Payment details -->
+    <div class="mb-3">
+      <label for="transactionId" class="form-label">Transaction ID</label>
+      <input type="text" class="form-control" id="transactionId" value="123456" readonly>
+    </div>
+    <div class="mb-3">
+      <label for="totalAmount" class="form-label">Total Amount</label>
+      <input type="text" class="form-control" id="totalAmount" value="$100.00" readonly>
+    </div>
+    <div class="mb-3">
+      <label for="paymentMethod" class="form-label">Payment Method</label>
+      <input type="text" class="form-control" id="paymentMethod" value="Credit Card" readonly>
     </div>
 
-    <!-- Langkah 2 -->
-    <div class="step-container">
-      <div class="step-box">
-        <div class="step-content">
-          <h3>Langkah 2: Pilih Tanggal dan Jam</h3>
-          <p>Pilih tanggal dan jam sesuai dengan ketersediaan lapangan yang Anda pilih.</p>
-        </div>
-      </div>
-      <div class="step-img">
-        <img src="{{ asset('kalender.jpg') }}" alt="Pilih Tanggal dan Jam">
-      </div>
+    <!-- Bank account details for transfer -->
+    <div class="mb-3">
+      <h4>Bank Account Details for Transfer</h4>
+      <p>Bank: Bank ABC</p>
+      <p>Account Name: Sewa Sewo Company</p>
+      <p>Account Number: 1234567890</p>
     </div>
 
-    <!-- Langkah 3 -->
-    <div class="step-container">
-      <div class="step-box">
-        <div class="step-content">
-          <h3>Langkah 3: Isi Formulir Penyewaan</h3>
-          <p>Isi formulir penyewaan dengan informasi yang dibutuhkan, seperti nama, nomor telepon, dan keterangan lainnya.</p>
-        </div>
+    <!-- Payment confirmation form -->
+    <form>
+      <div class="mb-3">
+        <label for="paymentProof" class="form-label">Upload Payment Proof</label>
+        <input type="file" class="form-control" id="paymentProof" accept="image/*" required>
       </div>
-      <div class="step-img">
-        <img src="{{ asset('formulir.jpg') }}" alt="Isi Formulir Penyewaan">
-      </div>
-    </div>
-
-    <!-- Langkah 4 -->
-    <div class="step-container">
-      <div class="step-box">
-        <div class="step-content">
-          <h3>Langkah 4: Lakukan Pembayaran</h3>
-          <p>Lakukan pembayaran sesuai dengan instruksi yang diberikan setelah mengisi formulir penyewaan.</p>
-        </div>
-      </div>
-      <div class="step-img">
-        <img src="{{ asset('pembayaran.jpg') }}" alt="Lakukan Pembayaran">
-      </div>
-    </div>
-
-    <!-- Langkah 5 -->
-    <div class="step-container">
-      <div class="step-box">
-        <div class="step-content">
-          <h3>Langkah 5: Konfirmasi Pembayaran</h3>
-          <p>Konfirmasikan pembayaran Anda untuk memastikan penyewaan lapangan Anda.</p>
-        </div>
-      </div>
-      <div class="step-img">
-        <img src="{{ asset('konfirmasi.jpg') }}" alt="Konfirmasi Pembayaran">
-      </div>
-    </div>
-
+      <button type="submit" class="btn btn-primary">Submit Confirmation</button>
+    </form>
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
