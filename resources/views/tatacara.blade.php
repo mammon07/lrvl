@@ -55,16 +55,16 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link {{ ($title === 'Home') ? 'active' : '' }}" href="/home">Home</a>
+            <a class="nav-link" href="/home">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link {{ ($title === 'Penyewaan') ? 'active' : '' }}" href="/sewa">Penyewaan</a>
+            <a class="nav-link" href="/sewa">Penyewaan</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link {{ ($title === 'Tata Cara') ? 'active' : '' }}" href="/tutorial">Tata Cara</a>
+            <a class="nav-link" href="/tutorial">Tata Cara</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link {{ ($title === 'FAQ') ? 'active' : '' }}" href="/faq">FAQ</a>
+            <a class="nav-link" href="/faq">FAQ</a>
           </li>
         </ul>
         <!-- Tombol Menu Akun dengan Ikon -->
