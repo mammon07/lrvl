@@ -67,11 +67,49 @@
   </style>
 </head>
 <body style="background-color: #EEEEEE">
-  <nav class="navbar navbar-expand-lg navbar-dark fixed-top shadow" style="background-color: #00C5C8;">
-    <div class="container">
-      <a class="navbar-brand fs-1 fw-bold me-5 text-center" href="#">Sewa Lapang</a>
-    </div>
-  </nav>
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top shadow" style ="background-color: #00C5C8;">
+      <div class="container">
+        <a class="navbar-brand fs-1 fw-bold me-5" href="#">SEWA SEWO</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link {{ ($title === 'Home') ? 'active' : '' }}" href="/home">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link {{ ($title === 'Penyewaan') ? 'active' : '' }}" href="/sewa">Penyewaan</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link {{ ($title === 'Tata Cara') ? 'active' : '' }}" href="/tutorial">Tata Cara</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link {{ ($title === 'FAQ') ? 'active' : '' }}" href="/faq">FAQ</a>
+            </li>
+          </ul>
+          <!-- Tombol Menu Akun dengan Ikon -->
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle bg-transparent" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <a class="nav-link" href="#">
+                    <div class="img-fluid custom-icon" style="background-color: transparent;">
+                      <img src="{{ asset('akun.png') }}" class="w-100 h-100" alt="Account Icon">
+                    </div>
+                  </a>
+                </button>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Akun</a></li>
+                  <li><a class="dropdown-item" href="#">Toko Saya</a></li>
+                  <li><a class="dropdown-item" href="#">Logout</a></li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
 
   <div class="container content-box" style="margin-top: 120px;">
     <div class="row">
