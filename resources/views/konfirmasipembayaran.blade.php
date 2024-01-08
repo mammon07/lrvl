@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Sewa Sewo - FAQ</title>
+  <title>Sewa Sewo - Konfirmasi Pembayaran</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
     integrity="sha512-xrZr44l54tfjkER8mKu+IqU77z4sGWu+TByfHTtqjL2z7WBRl9/p3a1NVrqdkX0fFU4PXVcO8A00vf5B6aSppQ=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -63,61 +63,38 @@
   </nav>
 
   <div class="container content-box" style="margin-top: 120px;">
-    <h2>Frequently Asked Questions (FAQ)</h2>
+    <h2>Konfirmasi Pembayaran</h2>
 
-    <!-- FAQ Accordion -->
-    <div class="accordion" id="faqAccordion">
-      <!-- FAQ Item 1 -->
-      <div class="accordion-item">
-        <h2 class="accordion-header" id="faqHeadingOne">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-            data-bs-target="#faqCollapseOne" aria-expanded="false" aria-controls="faqCollapseOne">
-            Pertanyaan 1: Apa langkah-langkah untuk menyewa lapangan?
-          </button>
-        </h2>
-        <div id="faqCollapseOne" class="accordion-collapse collapse" aria-labelledby="faqHeadingOne"
-          data-bs-parent="#faqAccordion">
-          <div class="accordion-body">
-            Jawaban 1: Anda dapat menyewa lapangan dengan mengikuti langkah-langkah yang tertera pada halaman
-            <a href="/tutorial">Tata Cara Penyewaan</a>.
-          </div>
-        </div>
-      </div>
-
-      <!-- FAQ Item 2 -->
-      <div class="accordion-item">
-        <h2 class="accordion-header" id="faqHeadingTwo">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-            data-bs-target="#faqCollapseTwo" aria-expanded="false" aria-controls="faqCollapseTwo">
-            Pertanyaan 2: Bagaimana cara pembayaran penyewaan lapangan?
-          </button>
-        </h2>
-        <div id="faqCollapseTwo" class="accordion-collapse collapse" aria-labelledby="faqHeadingTwo"
-          data-bs-parent="#faqAccordion">
-          <div class="accordion-body">
-            Jawaban 2: Setelah mengisi formulir penyewaan, Anda akan mendapatkan informasi mengenai cara pembayaran.
-          </div>
-        </div>
-      </div>
-
-      <!-- FAQ Item 3 -->
-      <div class="accordion-item">
-        <h2 class="accordion-header" id="faqHeadingThree">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-            data-bs-target="#faqCollapseThree" aria-expanded="false" aria-controls="faqCollapseThree">
-            Pertanyaan 3: Bagaimana jika lapangan yang diinginkan tidak tersedia pada tanggal yang diinginkan?
-          </button>
-        </h2>
-        <div id="faqCollapseThree" class="accordion-collapse collapse" aria-labelledby="faqHeadingThree"
-          data-bs-parent="#faqAccordion">
-          <div class="accordion-body">
-            Jawaban 3: Jika lapangan tidak tersedia, Anda dapat mencoba tanggal atau lapangan lain yang tersedia.
-          </div>
-        </div>
-      </div>
-
-      <!-- Tambahkan FAQ lainnya sesuai kebutuhan -->
+    <!-- Payment details -->
+    <div class="mb-3">
+      <label for="transactionId" class="form-label">Transaction ID</label>
+      <input type="text" class="form-control" id="transactionId" value="123456" readonly>
     </div>
+    <div class="mb-3">
+      <label for="totalAmount" class="form-label">Total Amount</label>
+      <input type="text" class="form-control" id="totalAmount" value="$100.00" readonly>
+    </div>
+    <div class="mb-3">
+      <label for="paymentMethod" class="form-label">Payment Method</label>
+      <input type="text" class="form-control" id="paymentMethod" value="Credit Card" readonly>
+    </div>
+
+    <!-- Bank account details for transfer -->
+    <div class="mb-3">
+      <h4>Bank Account Details for Transfer</h4>
+      <p>Bank: Bank ABC</p>
+      <p>Account Name: Sewa Sewo Company</p>
+      <p>Account Number: 1234567890</p>
+    </div>
+
+    <!-- Payment confirmation form -->
+    <form>
+      <div class="mb-3">
+        <label for="paymentProof" class="form-label">Upload Payment Proof</label>
+        <input type="file" class="form-control" id="paymentProof" accept="image/*" required>
+      </div>
+      <button type="submit" class="btn btn-primary">Submit Confirmation</button>
+    </form>
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
@@ -126,4 +103,3 @@
 </body>
 
 </html>
-    

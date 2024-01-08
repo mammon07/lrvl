@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Sewa Sewo - FAQ</title>
+  <title>Sewa Sewo - Tata Cara Penyewaan</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
     integrity="sha512-xrZr44l54tfjkER8mKu+IqU77z4sGWu+TByfHTtqjL2z7WBRl9/p3a1NVrqdkX0fFU4PXVcO8A00vf5B6aSppQ=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -12,6 +12,35 @@
     integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
   <style>
     /* ... (styles remain unchanged) ... */
+    .step-container {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 30px;
+      margin-bottom: 30px;
+    }
+
+    .step-box {
+      border: 2px solid #00C5C8;
+      border-radius: 8px;
+      padding: 20px;
+      margin-bottom: 20px;
+      background-color: #fff;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .step-content {
+      width: 48%;
+    }
+
+    .step-img {
+      width: 48%;
+    }
+
+    .step-img img {
+      width: 100%;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
   </style>
 </head>
 
@@ -63,61 +92,73 @@
   </nav>
 
   <div class="container content-box" style="margin-top: 120px;">
-    <h2>Frequently Asked Questions (FAQ)</h2>
+    <h2>Tata Cara Penyewaan Lapangan</h2>
 
-    <!-- FAQ Accordion -->
-    <div class="accordion" id="faqAccordion">
-      <!-- FAQ Item 1 -->
-      <div class="accordion-item">
-        <h2 class="accordion-header" id="faqHeadingOne">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-            data-bs-target="#faqCollapseOne" aria-expanded="false" aria-controls="faqCollapseOne">
-            Pertanyaan 1: Apa langkah-langkah untuk menyewa lapangan?
-          </button>
-        </h2>
-        <div id="faqCollapseOne" class="accordion-collapse collapse" aria-labelledby="faqHeadingOne"
-          data-bs-parent="#faqAccordion">
-          <div class="accordion-body">
-            Jawaban 1: Anda dapat menyewa lapangan dengan mengikuti langkah-langkah yang tertera pada halaman
-            <a href="/tutorial">Tata Cara Penyewaan</a>.
-          </div>
+    <!-- Langkah 1 -->
+    <div class="step-container">
+      <div class="step-box">
+        <div class="step-content">
+          <h3>Langkah 1: Pilih Lapangan</h3>
+          <p>Pilih lapangan yang ingin Anda sewa dari berbagai pilihan lapangan yang tersedia.</p>
         </div>
       </div>
-
-      <!-- FAQ Item 2 -->
-      <div class="accordion-item">
-        <h2 class="accordion-header" id="faqHeadingTwo">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-            data-bs-target="#faqCollapseTwo" aria-expanded="false" aria-controls="faqCollapseTwo">
-            Pertanyaan 2: Bagaimana cara pembayaran penyewaan lapangan?
-          </button>
-        </h2>
-        <div id="faqCollapseTwo" class="accordion-collapse collapse" aria-labelledby="faqHeadingTwo"
-          data-bs-parent="#faqAccordion">
-          <div class="accordion-body">
-            Jawaban 2: Setelah mengisi formulir penyewaan, Anda akan mendapatkan informasi mengenai cara pembayaran.
-          </div>
-        </div>
+      <div class="step-img">
+        <img src="{{ asset('lapangan.jpg') }}" alt="Contoh Lapangan">
       </div>
-
-      <!-- FAQ Item 3 -->
-      <div class="accordion-item">
-        <h2 class="accordion-header" id="faqHeadingThree">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-            data-bs-target="#faqCollapseThree" aria-expanded="false" aria-controls="faqCollapseThree">
-            Pertanyaan 3: Bagaimana jika lapangan yang diinginkan tidak tersedia pada tanggal yang diinginkan?
-          </button>
-        </h2>
-        <div id="faqCollapseThree" class="accordion-collapse collapse" aria-labelledby="faqHeadingThree"
-          data-bs-parent="#faqAccordion">
-          <div class="accordion-body">
-            Jawaban 3: Jika lapangan tidak tersedia, Anda dapat mencoba tanggal atau lapangan lain yang tersedia.
-          </div>
-        </div>
-      </div>
-
-      <!-- Tambahkan FAQ lainnya sesuai kebutuhan -->
     </div>
+
+    <!-- Langkah 2 -->
+    <div class="step-container">
+      <div class="step-box">
+        <div class="step-content">
+          <h3>Langkah 2: Pilih Tanggal dan Jam</h3>
+          <p>Pilih tanggal dan jam sesuai dengan ketersediaan lapangan yang Anda pilih.</p>
+        </div>
+      </div>
+      <div class="step-img">
+        <img src="{{ asset('kalender.jpg') }}" alt="Pilih Tanggal dan Jam">
+      </div>
+    </div>
+
+    <!-- Langkah 3 -->
+    <div class="step-container">
+      <div class="step-box">
+        <div class="step-content">
+          <h3>Langkah 3: Isi Formulir Penyewaan</h3>
+          <p>Isi formulir penyewaan dengan informasi yang dibutuhkan, seperti nama, nomor telepon, dan keterangan lainnya.</p>
+        </div>
+      </div>
+      <div class="step-img">
+        <img src="{{ asset('formulir.jpg') }}" alt="Isi Formulir Penyewaan">
+      </div>
+    </div>
+
+    <!-- Langkah 4 -->
+    <div class="step-container">
+      <div class="step-box">
+        <div class="step-content">
+          <h3>Langkah 4: Lakukan Pembayaran</h3>
+          <p>Lakukan pembayaran sesuai dengan instruksi yang diberikan setelah mengisi formulir penyewaan.</p>
+        </div>
+      </div>
+      <div class="step-img">
+        <img src="{{ asset('pembayaran.jpg') }}" alt="Lakukan Pembayaran">
+      </div>
+    </div>
+
+    <!-- Langkah 5 -->
+    <div class="step-container">
+      <div class="step-box">
+        <div class="step-content">
+          <h3>Langkah 5: Konfirmasi Pembayaran</h3>
+          <p>Konfirmasikan pembayaran Anda untuk memastikan penyewaan lapangan Anda.</p>
+        </div>
+      </div>
+      <div class="step-img">
+        <img src="{{ asset('konfirmasi.jpg') }}" alt="Konfirmasi Pembayaran">
+      </div>
+    </div>
+
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
@@ -126,4 +167,3 @@
 </body>
 
 </html>
-    

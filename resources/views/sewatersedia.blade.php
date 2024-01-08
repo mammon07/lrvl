@@ -4,14 +4,31 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Sewa Sewo - FAQ</title>
+  <title>Sewa Sewo</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
     integrity="sha512-xrZr44l54tfjkER8mKu+IqU77z4sGWu+TByfHTtqjL2z7WBRl9/p3a1NVrqdkX0fFU4PXVcO8A00vf5B6aSppQ=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr@4.6.6/dist/flatpickr.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr@4.6.6/dist/flatpickr.min.js"></script>
   <style>
     /* ... (styles remain unchanged) ... */
+
+    .available-hours {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+    }
+
+    .hour-button {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      background-color: #fff;
+      text-align: center;
+      cursor: pointer;
+    }
   </style>
 </head>
 
@@ -26,16 +43,16 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link" href="/home">Home</a>
+            <a class="nav-link {{ ($title === 'Home') ? 'active' : '' }}" href="/home">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/sewa">Penyewaan</a>
+            <a class="nav-link {{ ($title === 'Penyewaan') ? 'active' : '' }}" href="/sewa">Penyewaan</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/tutorial">Tata Cara</a>
+            <a class="nav-link {{ ($title === 'Tata Cara') ? 'active' : '' }}" href="/tutorial">Tata Cara</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/faq">FAQ</a>
+            <a class="nav-link {{ ($title === 'FAQ') ? 'active' : '' }}" href="/faq">FAQ</a>
           </li>
         </ul>
         <!-- Tombol Menu Akun dengan Ikon -->
@@ -63,62 +80,39 @@
   </nav>
 
   <div class="container content-box" style="margin-top: 120px;">
-    <h2>Frequently Asked Questions (FAQ)</h2>
-
-    <!-- FAQ Accordion -->
-    <div class="accordion" id="faqAccordion">
-      <!-- FAQ Item 1 -->
-      <div class="accordion-item">
-        <h2 class="accordion-header" id="faqHeadingOne">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-            data-bs-target="#faqCollapseOne" aria-expanded="false" aria-controls="faqCollapseOne">
-            Pertanyaan 1: Apa langkah-langkah untuk menyewa lapangan?
-          </button>
-        </h2>
-        <div id="faqCollapseOne" class="accordion-collapse collapse" aria-labelledby="faqHeadingOne"
-          data-bs-parent="#faqAccordion">
-          <div class="accordion-body">
-            Jawaban 1: Anda dapat menyewa lapangan dengan mengikuti langkah-langkah yang tertera pada halaman
-            <a href="/tutorial">Tata Cara Penyewaan</a>.
+    <div class="row">
+        </form>
+      <div class="col-md-4">
+        <div class="card mb-3 rounded-top">
+          <div class="card-body">
+            <img src="{{ asset('lapbas.jpg') }}" class="card-img-top mb-3 custom-img"
+              alt="Basket Marmer Pak Sarman Image">
+            <h4 class="card-title">namaToko </h4>
+            <p class="card-text">deskripsiToko</p>
           </div>
         </div>
       </div>
-
-      <!-- FAQ Item 2 -->
-      <div class="accordion-item">
-        <h2 class="accordion-header" id="faqHeadingTwo">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-            data-bs-target="#faqCollapseTwo" aria-expanded="false" aria-controls="faqCollapseTwo">
-            Pertanyaan 2: Bagaimana cara pembayaran penyewaan lapangan?
-          </button>
-        </h2>
-        <div id="faqCollapseTwo" class="accordion-collapse collapse" aria-labelledby="faqHeadingTwo"
-          data-bs-parent="#faqAccordion">
-          <div class="accordion-body">
-            Jawaban 2: Setelah mengisi formulir penyewaan, Anda akan mendapatkan informasi mengenai cara pembayaran.
-          </div>
-        </div>
-      </div>
-
-      <!-- FAQ Item 3 -->
-      <div class="accordion-item">
-        <h2 class="accordion-header" id="faqHeadingThree">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-            data-bs-target="#faqCollapseThree" aria-expanded="false" aria-controls="faqCollapseThree">
-            Pertanyaan 3: Bagaimana jika lapangan yang diinginkan tidak tersedia pada tanggal yang diinginkan?
-          </button>
-        </h2>
-        <div id="faqCollapseThree" class="accordion-collapse collapse" aria-labelledby="faqHeadingThree"
-          data-bs-parent="#faqAccordion">
-          <div class="accordion-body">
-            Jawaban 3: Jika lapangan tidak tersedia, Anda dapat mencoba tanggal atau lapangan lain yang tersedia.
-          </div>
-        </div>
-      </div>
-
-      <!-- Tambahkan FAQ lainnya sesuai kebutuhan -->
     </div>
   </div>
+
+  <!-- Additional content for available hours page -->
+  <div class="container content-box mt-5">
+    <h2>Available Hours for Field 1 - Date: 2024-01-05</h2>
+
+    <div class="available-hours">
+      <!-- Generate available hours dynamically -->
+ 
+        <button class="hour-button" onclick="bookNow({{ $i }})">   12:00 -  1 :00 </button>
+ 
+    </div>
+  </div>
+
+  <script>
+    function bookNow(hour) {
+      alert('Booking for ' + hour + ':00 - ' + (hour + 1) + ':00');
+      // Add your logic for booking or redirect to the booking page
+    }
+  </script>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
@@ -126,4 +120,3 @@
 </body>
 
 </html>
-    
